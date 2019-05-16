@@ -2,7 +2,12 @@
 <%= form_tag authors_path, method: "post" do %>
   <% if @author.errors.any? %>
     <h2>There were some errors:</h2>
-    <% @author.errors.
+    <ul>
+      <% @author.errors.full_messages.each do |error_msg| %>
+        <li><%= error_msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
   <div class="field">
     <%= label_tag "name", "Name" %>
