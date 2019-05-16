@@ -1,14 +1,15 @@
 <h2>Create an Author</h2>
 <%= form_tag authors_path, method: "post" do %>
-<% binding.pry %>
-  <% if @author.errors.any? %>
-    <h2>There were some errors:</h2>
-    <ul>
-      <% @author.errors.full_messages.each do |error_msg| %>
-        <li><%= error_msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
+  <div id="error_explanation">
+    <% if @author.errors.any? %>
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @author.errors.full_messages.each do |error_msg| %>
+          <li><%= error_msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
 
   <div class="field<% ' field_with_errors' if @author.errors[:name].any? %>">
     <%= label_tag "name", "Name" %>
