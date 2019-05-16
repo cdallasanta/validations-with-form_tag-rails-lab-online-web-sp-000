@@ -1,5 +1,6 @@
 <h2>Create an Author</h2>
 <%= form_tag authors_path, method: "post" do %>
+<% binding.pry %>
   <% if @author.errors.any? %>
     <h2>There were some errors:</h2>
     <ul>
